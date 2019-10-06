@@ -1,0 +1,35 @@
+# Weather prediction
+- platform: yr
+  monitored_conditions:
+    - 'symbol'
+    - 'temperature'
+    - 'humidity'
+    #HUOM! tässä boradlink RM pron lämpötila anturin asetukset
+- platform: broadlink
+  host: !secret broadlink_host
+  mac: !secret broadlink_mac
+  monitored_conditions:
+    - 'temperature'
+    #HUOM! tässä boradlink RM pron lämpötila anturin asetukset
+- platform: template
+  sensors:
+    tv_source:
+      value_template: '{{ states.media_player.tv.attributes["source"] }}'
+      friendly_name: 'TV Source'
+    tv_state:
+      value_template: >
+        {{ is_state('media_player.tv', 'playing')
+           or is_state('media_player.tv', 'idle') }}
+      friendly_name: 'TV State'
+    ps4_state:
+      value_template: >
+        {{ is_state('media_player.ps4olohuone', 'playing')
+           or is_state('media_player.ps4olohuone', 'idle') }}
+      friendly_name: 'PS4 State'
+- platform: epsonworkforce
+  host: !secret epsonip
+  monitored_conditions:
+    - black
+    - yellow
+    - magenta
+    - cyan

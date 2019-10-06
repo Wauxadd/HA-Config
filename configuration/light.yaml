@@ -1,0 +1,23 @@
+# näitä tuskin tarvitset. tässä on lähinnä template platformilla tehty jo olemassa olevan valon ohjaus erilliseksi valokatkaisijaksi tabletti ohjauspaneeliin.
+- platform: group
+  name: Kattokruunu
+  entities:
+    - light.kattokruunu_1
+    - light.kattokruunu_2
+    - light.kattokruunu_3
+- platform: template
+  lights:
+    samun_yovalo:
+      friendly_name: "Samun Yövalo"
+      turn_on:
+        service: script.samunyovalo
+      turn_off:
+        service: light.turn_off
+        entity_id: light.valo_3
+    samun_huone:
+      friendly_name: "Samun Huone"
+      turn_on:
+        service: script.samunhuone
+      turn_off:
+        service: light.turn_off
+        entity_id: light.valo_3

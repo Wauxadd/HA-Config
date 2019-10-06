@@ -1,0 +1,104 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Koti
+  # Location required to calculate the time the sun rises and sets
+  latitude: 61.4991423763595
+  longitude: 23.599157810773814
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 72
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Helsinki
+  # Customization file
+  customize: !include configuration/customize.yaml
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Frontend
+frontend:
+#  themes: !include_dir_merge_named themes
+  javascript_version: auto
+
+# Discover some devices automatically
+discovery:
+
+# Webhook platform
+webhook:
+# Speedtest.net
+speedtestdotnet:
+  scan_interval:
+    minutes: 240
+  server_id: 12372
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+# Homekit Configuration
+homekit: !include configuration/homekit.yaml
+
+# Text to speech
+tts:
+  - platform: google_translate
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
+    service_name: google_say
+    base_url: http://192.168.8.129:8123
+    language: 'fi'
+
+# Weather
+weather:
+  - platform: darksky
+    api_key: !secret darksky
+    mode: daily
+
+sun:
+
+# All Sensors/Switches ETC.
+sensor: !include configuration/sensor.yaml
+group: !include configuration/groups.yaml
+automation: !include configuration/automations.yaml
+script: !include configuration/scripts.yaml
+camera: !include configuration/camera.yaml
+media_player: !include configuration/media_player.yaml
+light: !include configuration/light.yaml
+switch: !include configuration/switch.yaml
+input_boolean: !include configuration/input_boolean.yaml
+
+
+# IOS App integration
+ios:
+
+# enables `wake_on_lan` domain    
+wake_on_lan:
+
+# Climate devices
+smartir:
+climate:
+  - platform: smartir
+    name: Ilmalämpöpumppu
+    unique_id: ilmalampopumppu
+    device_code: 1020
+    controller_data: !secret broadlink_host
+    temperature_sensor: sensor.broadlink_sensor_temperature
+
+# Zigbee map 
+zigbee2mqtt_networkmap:
+  #topic: your topic (optional, default zigbee2mqtt)
+panel_iframe:
+  networkmap:
+     title: 'Zigbee Map'
+     url: '/local/community/zigbee2mqtt_networkmap/map.html'
+     icon: 'mdi:graphql'
+
+
+
+
+
+
+
+  
+  

@@ -1,0 +1,19 @@
+# ns. "tyhmiä" katkaisijoita, näitä olen käyttänyt muutamiin valojen ohjauksiin tossa mun tabletti ohjauspaneelissa.
+  ps4timer:
+    name: Peliaika
+    initial: off
+  dummy1:
+    name: Dummy
+    initial: off
+  kaikkivalotak:
+    name: Kaikki Alakerta
+    initial: on
+  kaikkivalotyk:
+    name: Kaikki Yläkerta
+    initial: on
+  samunyovalo:
+    name: Samun Yövalo
+    initial: off
+  samunhuone:
+    name: Samun Huone
+    initial: off

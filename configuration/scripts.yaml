@@ -1,0 +1,16 @@
+samunyovalo:
+  alias: Samun Yövalo
+  sequence:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.valo_3
+        brightness: 12
+        rgb_color: [255,43,49]
+samunhuone:
+  alias: Samun Huone
+  sequence:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.valo_3
+        brightness: 255
+        rgb_color: [255,255,255]

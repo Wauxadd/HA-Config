@@ -1,0 +1,29 @@
+# Tässä on muokattu sensoreiden "device_class" ominaisuutta jotta ne näkyvät oikein applen homekitissä.
+
+sensor.yr_humidity:
+  device_class: humidity
+sensor.broadlink_sensor_temperature:
+  device_class: temperature
+  friendly_name: Olohuone lämpötila
+media_player.tv:
+  device_class: tv
+media_player.ps4olohuone:
+  device_class: tv
+sensor.samurh:
+  device_class: humidity
+sensor.makuuhuonerh:
+  device_class: humidity
+sensor.leevioivarh:
+  device_class: humidity
+sensor.samut:
+  device_class: temperature
+sensor.makuuhuonet:
+  device_class: temperature
+sensor.leevioivat:
+  device_class: temperature
+binary_sensor.terassiovi:
+  device_class: door
+binary_sensor.etuovi:
+  device_class: door
+sensor.ender_5_job_percentage:
+  device_class: humidity

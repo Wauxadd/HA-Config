@@ -1,0 +1,22 @@
+# LG webos telkkarin säädöt
+  - platform: webostv
+    #scan_interval: 2
+    name: TV
+    host: !secret tv_host
+    filename: webostv.conf
+    timeout: 5
+    turn_on_action:
+        service: wake_on_lan.send_magic_packet
+        data:
+            mac: !secret tv_mac
+    customize:
+        sources:
+            - 'Live TV'
+            - Netflix
+            - PS4
+            - Ruutu
+            - Cmore
+            - 'Yle Areena'
+            - YouTube
+            - 'mtv Suomi'
+            - 'Spotify Music: kuuntele ilmaiseksi LG TV:n kautta'

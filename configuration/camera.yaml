@@ -1,0 +1,5 @@
+
+  - platform: mjpeg
+    name: Ender-5
+    still_image_url: http://192.168.8.107/webcam/?action=snapshot
+    mjpeg_url: http://192.168.8.107/webcam/?action=stream

@@ -1,0 +1,24 @@
+# tässä on määritetty mitä laitteita tuodaan homekittiin näkyviin.
+auto_start: false
+filter:
+  include_entities:
+    - fan.ylakerta
+    - switch.rf1
+    - switch.rf2
+    - climate.ilmalampopumppu
+    - sensor.dyson_temperature
+    - climate.puhallin
+    - fan.puhallin
+    #exclude_entities:
+    - media_player.ps4olohuone
+    - media_player.tv
+    - switch.ps4timer
+    - sensor.makuuhuonet
+    - sensor.makuuhuonerh
+    - sensor.samut
+    - sensor.samurh
+    - sensor.leevioivat
+    - sensor.leevioivarh
+    - binary_sensor.terassiovi
+    - binary_sensor.etuovi
+    - sensor.ender_5_job_percentage
